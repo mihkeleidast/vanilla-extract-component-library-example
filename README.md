@@ -1,4 +1,4 @@
-# Component Library Example
+# CSS Modules Component Library Example
 
 Building a component library is hard, and a big part of that comes from the tooling needed to make it work.
 
@@ -58,6 +58,6 @@ To debug what's in the bundle, use `npm run build` and look at the output.
 
 ## Caveats
 
-I had to fork [`rollup-plugin-postcss`](https://github.com/egoist/rollup-plugin-postcss) because it doesn't respect the [`preserveModules`](https://rollupjs.org/guide/en/#preserveModules) option.
+Luke had to fork [`rollup-plugin-postcss`](https://github.com/egoist/rollup-plugin-postcss) because it doesn't respect the [`preserveModules`](https://rollupjs.org/guide/en/#preserveModules) option.
 
 `rollup-plugin-postcss` is [in search of a new maintainer](https://github.com/egoist/rollup-plugin-postcss/issues/217), so it may be a while before any PRs get merged.

@@ -5,7 +5,7 @@
   "main": "src/index.tsx",
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "webpack"
+    "build": "webpack --mode production"
   },
   "keywords": [],
   "author": "Luke Channings",
@@ -14,32 +14,32 @@
     "*.css"
   ],
   "devDependencies": {
-    "@babel/core": "^7.11.0",
-    "@babel/preset-env": "^7.11.0",
-    "@babel/preset-react": "^7.10.4",
-    "@babel/preset-typescript": "^7.10.4",
-    "@types/react": "^16.9.43",
-    "@types/react-dom": "^16.9.8",
-    "@types/webpack": "^4.41.21",
-    "babel-loader": "^8.1.0",
-    "clean-webpack-plugin": "^3.0.0",
-    "core-js": "^3.6.5",
-    "css-loader": "^4.2.0",
+    "@babel/core": "^7.17.2",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.7",
+    "@types/react": "^17.0.39",
+    "@types/react-dom": "^17.0.11",
+    "@types/webpack": "^5.28.0",
+    "babel-loader": "^8.2.3",
+    "clean-webpack-plugin": "^4.0.0",
+    "core-js": "^3.21.0",
+    "css-loader": "^6.6.0",
     "ejs-loader": "^0.5.0",
-    "html-webpack-plugin": "^4.3.0",
-    "mini-css-extract-plugin": "^0.9.0",
-    "raw-loader": "^4.0.1",
-    "react-hot-loader": "^4.12.21",
-    "style-loader": "^1.2.1",
-    "typescript": "^3.9.7",
-    "webpack": "^4.44.1",
-    "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0"
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.5.3",
+    "raw-loader": "^4.0.2",
+    "react-hot-loader": "^4.13.0",
+    "style-loader": "^3.3.1",
+    "typescript": "^4.5.5",
+    "webpack": "^5.69.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4"
   },
   "dependencies": {
-    "modern-css-reset": "^1.0.4",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "modern-css-reset": "^1.4.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "babel": {
     "presets": [
