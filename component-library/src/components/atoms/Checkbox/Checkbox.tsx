@@ -1,7 +1,5 @@
-import React from 'react';
+import React from "react";
 
-import { root } from './Checkbox.module.css'
+import { rootStyle } from "./Checkbox.css";
 
-export const Checkbox = () => (
-  <input className={root} type="checkbox" />
-)
+export const Checkbox = () => <input className={rootStyle} type="checkbox" />;

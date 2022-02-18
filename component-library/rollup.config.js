@@ -11,6 +11,7 @@ const globals = {
   react: "React",
   "react-dom": "ReactDOM",
   "core-js": "core-js",
+  "@vanilla-extract/css": "@vanilla-extract/css",
 };
 
 const globalModules = Object.keys(globals);
@@ -20,6 +21,7 @@ const sourceMap = true;
 export default {
   input: {
     index: "./src/index.ts",
+    base: "./src/base.css",
   },
   preserveModules: true,
   treeshake: false,
