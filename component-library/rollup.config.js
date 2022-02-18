@@ -49,9 +49,6 @@ export default {
     postcss({
       plugins: [postcssImport(), postcssEnv()],
       namedExports: true,
-      modules: {
-        generateScopedName: "[folder]_[local]-[hash:base64:5]",
-      },
       sourceMap,
       configFile: false,
       extract: true,

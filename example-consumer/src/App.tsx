@@ -1,5 +1,5 @@
 import React from "react";
-import "component-library/dist/base.css";
+import "component-library/dist/index.css";
 import { Button } from "component-library";
 
 export const App = () => (

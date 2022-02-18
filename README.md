@@ -1,4 +1,6 @@
-# CSS Modules Component Library Example
+# Vanilla Extract Component Library Example
+
+> This is a modified version of Luke Channings' component library example that uses CSS Modules: https://github.com/LukeChannings/component-library-example
 
 Building a component library is hard, and a big part of that comes from the tooling needed to make it work.
 
@@ -6,28 +8,27 @@ If your component library has 100 components, but the project you're working on 
 
 This is an example project with two components:
 
-- **component-library**: a toy component library with two atomic components: Button and Checkbox. It uses TypeScript, React, and CSS Modules, and it's compiled into tree-shakable ESM, with TypeScript definitions and source maps in the distribution.
+- **component-library**: a toy component library with two atomic components: Button and Checkbox. It uses TypeScript, React, and Vanilla Extract, and it's compiled into tree-shakable ESM, with TypeScript definitions and source maps in the distribution.
 - **example-consumer**: A minimal React app, compiled with Webpack, and configured so that only the components you use end up in your production bundle.
 
 ## Structure
 
 ```bash
 .
-├── global.d.ts # Default declaration for CSS files. (typed-css-modules can be used instead of this.)
 ├── package.json # contains babelrc, browserslist, peerDependencies, sideEffects and module configuration.
 ├── rollup.config.js #
 ├── src
 │   ├── index.ts # Entrypoint. Exports all modules. Can be tree-shaken.
-│   ├── base.css # Base CSS, includes a reset (modern-css-reset), and color variables.
+│   ├── base.css # Base CSS, includes a reset (modern-css-reset).
 │   │── variables
-│   │   └── colors.css # CSS variable example, sets colors on :root.
+│   │   └── colors.css.ts # Vanilla Extract global theme, sets colors on :root.
 │   ├── components
 │   │   └── atoms
 │   │       ├── Button
-│   │       │   ├── Button.module.css
+│   │       │   ├── Button.css.ts
 │   │       │   └── Button.tsx
 │   │       └── Checkbox
-│   │           ├── Checkbox.module.css
+│   │           ├── Checkbox.css.ts
 │   │           └── Checkbox.tsx
 ├── tsconfig.json # TypeScript configuration, only emits declaration files
 ```
@@ -55,9 +56,3 @@ cd -
 Run the consumer example with `npm start`.
 Build a production bundle with `npm run build -- --mode=production`.
 To debug what's in the bundle, use `npm run build` and look at the output.
-
-## Caveats
-
-Luke had to fork [`rollup-plugin-postcss`](https://github.com/egoist/rollup-plugin-postcss) because it doesn't respect the [`preserveModules`](https://rollupjs.org/guide/en/#preserveModules) option.
-
-`rollup-plugin-postcss` is [in search of a new maintainer](https://github.com/egoist/rollup-plugin-postcss/issues/217), so it may be a while before any PRs get merged.
