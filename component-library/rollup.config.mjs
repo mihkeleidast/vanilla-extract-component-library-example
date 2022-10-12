@@ -23,17 +23,17 @@ export default {
     index: "./src/index.ts",
     base: "./src/base.css",
   },
-  preserveModules: true,
   treeshake: false,
-  output: [
-    {
-      dir: "dist",
-      format: "esm",
-      globals,
-      sourcemap: sourceMap,
-      preferConst: true,
+  output: {
+    dir: "dist",
+    format: "esm",
+    globals,
+    sourcemap: sourceMap,
+    preserveModules: true,
+    generatedCode: {
+      constBindings: true,
     },
-  ],
+  },
   plugins: [
     resolve({ extensions }),
     commonjs({
