@@ -18,6 +18,7 @@ module.exports = (env, argv) => {
     entry: "./src/index.tsx",
     output: {
       path: path.resolve(__dirname, "./dist"),
+      chunkFilename: "[name].js",
     },
     resolve: {
       extensions: [".js", ".jsx", ".json", ".ts", ".tsx"],
@@ -60,8 +61,28 @@ module.exports = (env, argv) => {
       new MiniCssExtractPlugin(),
     ],
     optimization: {
-      sideEffects: true,
-      usedExports: true,
+      splitChunks: {
+        chunks: "all",
+        minSize: 0,
+        minRemainingSize: 0,
+        minChunks: 1,
+        maxAsyncRequests: 30,
+        maxInitialRequests: 30,
+        enforceSizeThreshold: 50000,
+        cacheGroups: {
+          defaultVendors: {
+            test: /[\\/]node_modules[\\/]/,
+            name: "vendors",
+            priority: -10,
+            reuseExistingChunk: true,
+          },
+          default: {
+            minChunks: 2,
+            priority: -20,
+            reuseExistingChunk: true,
+          },
+        },
+      },
     },
   };
 };

@@ -1,5 +1,5 @@
 *.swp
-dist
+component-library/dist
 node_modules
 tsconfig.tsbuildinfo
 .vscode

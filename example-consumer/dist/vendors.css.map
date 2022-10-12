@@ -1,0 +1,1 @@
+{"version":3,"file":"vendors.css","mappings":"AAAA;EACE,cAAc;EACd,gBAAgB;EAChB,aAAa;AACf,C","sources":["webpack://library-consumer/./node_modules/@vanilla-extract/webpack-plugin/extracted.js"],"sourcesContent":[".w7jxpi0 {\n  margin: 0 auto;\n  max-width: 800px;\n  padding: 20px;\n}"],"names":[],"sourceRoot":""}
