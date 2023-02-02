@@ -56,7 +56,10 @@ module.exports = (env, argv) => {
         template: "src/index.ejs",
       }),
       new CleanWebpackPlugin(),
-      new VanillaExtractPlugin(),
+      new VanillaExtractPlugin({
+        // exclude CSS Module files from component-library
+        test: /\.css\.(ts|tsx)(\?used)?$/,
+      }),
       new MiniCssExtractPlugin(),
     ],
     optimization: {

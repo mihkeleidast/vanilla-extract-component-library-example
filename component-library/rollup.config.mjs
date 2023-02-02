@@ -4,6 +4,7 @@ import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import postcssImport from "postcss-import";
 import postcssEnv from "postcss-preset-env";
+import { vanillaExtractPlugin } from "@vanilla-extract/rollup-plugin";
 
 const extensions = [".js", ".jsx", ".ts", ".tsx"];
 
@@ -35,6 +36,7 @@ export default {
     },
   },
   plugins: [
+    vanillaExtractPlugin(),
     resolve({ extensions }),
     commonjs({
       include: "**/node_modules/**",
