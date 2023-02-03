@@ -34,6 +34,13 @@ export default {
     generatedCode: {
       constBindings: true,
     },
+    // Change .css.js files to something else so that they don't get re-processed by consumer's setup
+    entryFileNames({ name }) {
+      return `${name.replace(/\.css$/, ".css.vanilla")}.js`;
+    },
+    assetFileNames({ name }) {
+      return name?.replace(/^src\//, "") ?? "";
+    },
   },
   plugins: [
     vanillaExtractPlugin(),

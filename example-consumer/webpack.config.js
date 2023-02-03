@@ -27,7 +27,6 @@ module.exports = (env, argv) => {
       rules: [
         {
           test: /\.(t|j)sx?$/,
-          exclude: /node_modules/,
           use: "babel-loader",
         },
         {
@@ -40,7 +39,7 @@ module.exports = (env, argv) => {
           use: [
             MiniCssExtractPlugin.loader,
             {
-              loader: require.resolve("css-loader"),
+              loader: "css-loader",
               options: {
                 url: false, // Required as image imports should be handled via JS/TS import statements
               },
@@ -56,10 +55,7 @@ module.exports = (env, argv) => {
         template: "src/index.ejs",
       }),
       new CleanWebpackPlugin(),
-      new VanillaExtractPlugin({
-        // exclude CSS Module files from component-library
-        test: /\.css\.(ts|tsx)(\?used)?$/,
-      }),
+      new VanillaExtractPlugin(),
       new MiniCssExtractPlugin(),
     ],
     optimization: {
